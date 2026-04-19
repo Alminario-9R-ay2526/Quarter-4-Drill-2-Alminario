@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Q4 Drill1 2</title>
+  <!-- Bootstrap 5 CSS + Icons (optional but stylish) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts for clean typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <!-- External custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container py-4 py-md-5">
+    <!-- Main card with heat index checker -->
+    <div class="card checker-card shadow-lg border-0 mx-auto">
+      <div class="card-header bg-transparent border-0 pt-4 pb-0">
+        <h1 class="display-6 fw-bold text-center gradient-text"> Heat Index Checker</h1>
+        <p class="text-center text-muted mt-2">Feels-like temperature based on humidity & air temperature</p>
+      </div>
+      
+      <div class="card-body px-4 px-lg-5 pt-3 pb-4">
+        <!-- INSTRUCTIONS TOGGLE SECTION: uses ontoggle event (HTML5 details) -->
+        <details id="instructionToggle" ontoggle="showInstructionsAlert()" class="mb-4 instruction-details">
+          <summary class="fw-semibold text-primary-emphasis bg-light p-2 rounded-2">
+            📘 Click to view / hide short instructions
+          </summary>
+          <div class="mt-3 p-3 instruction-box rounded-3">
+            <p class="mb-1"><strong>⚡ How to use the Heat Index Checker:</strong></p>
+            <ul class="mb-0 small">
+              <li>Enter air temperature in <strong>degrees Celsius (°C)</strong> (typical range: 10°C – 50°C).</li>
+              <li>Enter relative <strong>humidity (%)</strong> (0% – 100%).</li>
+              <li>Press the <strong>"Check"</strong> button to calculate the Heat Index (apparent temperature).</li>
+              <li>The heat index reveals how hot it really feels, plus safety status: <strong>Extreme / Danger, Danger, Extreme Caution, Caution, Normal</strong>.</li>
+              <li>Reference: based on NOAA heat index formula (converted to °C).</li>
+            </ul>
+          </div>
+        </details>
+
+        <!-- Input fields group with Bootstrap styling -->
+        <div class="row g-4 mb-4">
+          <div class="col-md-6">
+            <label for="temperature" class="form-label fw-semibold">Temperature (°C)</label>
+            <div class="input-group">
+              <span class="input-group-text bg-white">°C</span>
+              <input type="number" id="temperature" class="form-control form-control-lg" step="any" placeholder="e.g., 32" value="38">
+            </div>
+            <div class="form-text">Enter air temperature (e.g., 20–50°C)</div>
+          </div>
+          <div class="col-md-6">
+            <label for="humidity" class="form-label fw-semibold"> Humidity (%)</label>
+            <div class="input-group">
+              <span class="input-group-text bg-white">%</span>
+              <input type="number" id="humidity" class="form-control form-control-lg" step="any" placeholder="e.g., 65" value="67">
+            </div>
+            <div class="form-text">Relative humidity percentage (0–100%)</div>
+          </div>
+        </div>
+
+        <!-- Check Button with Bootstrap primary & custom styling -->
+        <div class="d-grid gap-2 col-8 col-md-5 mx-auto mb-5">
+          <button id="checkBtn" class="btn btn-primary btn-lg shadow-sm fw-bold py-2">
+             Check Heat Index
+          </button>
+        </div>
+
+        <!-- RESULT SECTION: dynamic output using innerHTML -->
+        <div id="resultContainer" class="result-card mt-2 p-4 rounded-4 text-center">
+          <!-- Default content will be filled by JavaScript on load -->
+          <div id="heatIndexDisplay">
+            <span class="placeholder-glow">
+              <span class="placeholder col-8"></span>
+            </span>
+          </div>
+        </div>
+
+        <!-- Hyperlinks for online sources (required) -->
+        <div class="link-footer mt-5 pt-3 text-center border-top">
+          <p class="mb-2 small text-secondary"> Online sources & references:</p>
+          <a href="https://www.weather.gov/media/epz/wxcalc/heatIndex.pdf" target="_blank" class="text-decoration-none me-3 small fw-semibold"> NOAA Heat Index Formula</a>
+          <a href="https://en.wikipedia.org/wiki/Heat_index" target="_blank" class="text-decoration-none small fw-semibold"> Wikipedia: Heat Index</a>
+          <a href="https://www.weather.gov/safety/heat-index" target="_blank" class="text-decoration-none ms-3 small fw-semibold"> NWS Safety Guide</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- External JavaScript (main.js) -->
+  <script src="main.js"></script>
+  <!-- Bootstrap JS bundle (for potential future interactivity) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

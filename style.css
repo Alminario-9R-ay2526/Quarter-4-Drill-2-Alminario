@@ -1,0 +1,172 @@
+/* ===== styles.css ===== */
+/* External CSS for Heat Index Checker - unique modern design */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(145deg, #e0eafc 0%, #cfdef3 100%);
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+/* main card styling */
+.checker-card {
+  max-width: 750px;
+  border-radius: 2rem !important;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(2px);
+  transition: transform 0.2s ease;
+}
+
+.checker-card:hover {
+  transform: translateY(-5px);
+}
+
+/* gradient text for title */
+.gradient-text {
+  background: linear-gradient(135deg, #c0392b, #e67e22, #f1c40f);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: -0.5px;
+}
+
+/* instruction toggle details styling */
+.instruction-details summary {
+  cursor: pointer;
+  transition: all 0.2s;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.instruction-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.instruction-details summary::before {
+  content: "📌";
+  margin-right: 8px;
+  font-size: 1.1rem;
+}
+
+.instruction-box {
+  background: #f8f9fc;
+  border-left: 5px solid #e67e22;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+/* input fields custom */
+.form-control, .input-group-text {
+  border-radius: 16px !important;
+  border: 1px solid #dee2e6;
+  transition: all 0.2s;
+}
+
+.form-control:focus {
+  border-color: #e67e22;
+  box-shadow: 0 0 0 0.2rem rgba(230, 126, 34, 0.25);
+}
+
+.input-group-text {
+  background-color: #fef5e7;
+  color: #c0392b;
+  font-weight: 500;
+}
+
+/* custom button */
+.btn-primary {
+  background: linear-gradient(95deg, #e67e22, #f39c12);
+  border: none;
+  border-radius: 40px !important;
+  transition: all 0.3s;
+  letter-spacing: 0.5px;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(95deg, #d35400, #e67e22);
+  transform: scale(1.02);
+  box-shadow: 0 12px 20px rgba(230, 126, 34, 0.3);
+}
+
+/* result card styling */
+.result-card {
+  background: #ffffff;
+  border-radius: 28px !important;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+  transition: all 0.2s;
+  border: 1px solid rgba(230, 126, 34, 0.2);
+}
+
+#heatIndexDisplay {
+  font-size: 1.6rem;
+  font-weight: 700;
+  transition: 0.2s;
+}
+
+/* status color classes (dynamic) */
+.status-extreme {
+  color: #a71e2f;
+  background: #ffe6e8;
+  border-radius: 40px;
+  padding: 6px 16px;
+  display: inline-block;
+  font-weight: 700;
+}
+
+.status-danger {
+  color: #c7254e;
+  background: #ffeef2;
+  border-radius: 40px;
+  padding: 6px 16px;
+  display: inline-block;
+  font-weight: 700;
+}
+
+.status-caution {
+  color: #e67e22;
+  background: #fff4e6;
+  border-radius: 40px;
+  padding: 6px 16px;
+  display: inline-block;
+  font-weight: 700;
+}
+
+.status-normal {
+  color: #2c6e2f;
+  background: #e6f4e8;
+  border-radius: 40px;
+  padding: 6px 16px;
+  display: inline-block;
+  font-weight: 700;
+}
+
+/* link footer */
+.link-footer a {
+  color: #c0392b;
+  transition: 0.2s;
+}
+
+.link-footer a:hover {
+  color: #e67e22;
+  text-decoration: underline !important;
+}
+
+/* responsive */
+@media (max-width: 576px) {
+  .checker-card {
+    margin: 0.5rem;
+  }
+  #heatIndexDisplay {
+    font-size: 1.3rem;
+  }
+  .btn-primary {
+    font-size: 1rem;
+  }
+}
